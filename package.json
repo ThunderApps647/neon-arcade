@@ -1,0 +1,9 @@
+{
+  "name": "neon-arcade",
+  "version": "1.0.0",
+  "description": "3D multiplayer mobile arcade: coin pushers, claw machines, Key Master, Stackem Up, Big Wheel, prize counter.",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=18" },
+  "license": "MIT"
+}
