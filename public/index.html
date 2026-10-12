@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#07040e">
+<title>Neon Arcade</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg">
+<link rel="stylesheet" href="style.css">
+<script type="importmap">
+{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.module.js" } }
+</script>
+</head>
+<body>
+<canvas id="c"></canvas>
+
+<div id="login" class="overlay">
+  <div class="card">
+    <h1 class="logo">NEON<span>ARCADE</span></h1>
+    <p class="sub">Multiplayer coin pushers, claw machines, Key Master, Stackem Up and the Big Wheel. Win tickets, trade them for prizes.</p>
+    <input id="nameIn" maxlength="16" placeholder="Your name" autocomplete="off">
+    <div id="colors"></div>
+    <button id="goBtn" class="big">ENTER ARCADE</button>
+    <p id="loginMsg" class="small"></p>
+  </div>
+</div>
+
+<div id="hud" class="hidden">
+  <div id="wallet">
+    <div class="pill money" id="credits">$0.00</div>
+    <div class="pill tix" id="tickets">0</div>
+  </div>
+  <div id="topBtns">
+    <button id="chatBtn">Chat</button>
+    <button id="invBtn">Bag</button>
+    <button id="lbBtn">Top</button>
+  </div>
+  <div id="online"></div>
+  <div id="ann"></div>
+  <div id="chatlog"></div>
+  <button id="exitBtn" class="hidden">&larr; Exit</button>
+  <div id="prompt" class="hidden">
+    <div id="promptLabel"></div>
+    <div class="row"><button id="promptBtn" class="big"></button><button id="watchBtn" class="big alt hidden">Watch</button></div>
+  </div>
+  <div id="panel" class="hidden"></div>
+  <div id="joyBase" class="hidden"><div id="joyKnob"></div></div>
+  <div id="hint">Drag left side to walk &middot; drag right side to look around</div>
+</div>
+
+<div id="modal" class="overlay hidden">
+  <div class="card wide">
+    <div id="modalBody"></div>
+    <button id="modalClose" class="ghost">Close</button>
+  </div>
+</div>
+<div id="toasts"></div>
+<div id="loading" class="overlay"><div class="spinner"></div><p id="loadingText">Loading arcade...</p></div>
+<script>
+  setTimeout(function () {
+    if (!window.__gameLoaded) document.getElementById('loadingText').textContent =
+      'Could not load the 3D engine (three.js from cdn.jsdelivr.net). Check your connection, or see README for offline setup.';
+  }, 15000);
+</script>
+<script type="module" src="game.js"></script>
+</body>
+</html>

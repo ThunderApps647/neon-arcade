@@ -1,0 +1,1 @@
+{ "name": "Neon Arcade", "short_name": "Arcade", "start_url": "/", "display": "fullscreen", "orientation": "any", "background_color": "#07040e", "theme_color": "#07040e", "icons": [{ "src": "icon.svg", "sizes": "any", "type": "image/svg+xml" }] }
